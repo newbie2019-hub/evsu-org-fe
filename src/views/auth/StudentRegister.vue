@@ -304,11 +304,11 @@
     if (this.data.year_level == 0) return this.$toast.error('Year level is required');
     if (this.data.section_id == 0) return this.$toast.error('Section is required');
     if (this.data.organization_id == 0) return this.$toast.error('Organization is required');
-    this.data.academic_year[1] = this.data.academic_year[1].toString().substring(2);
-    this.data.acad_year = this.data.academic_year.join('-');
+    // this.data.academic_year[1] = this.data.academic_year[1].toString().substring(2);
+    // this.data.acad_year = this.data.academic_year.join('-');
 
     if (this.fileRecordsForUpload.length > 0) {
-     const img = await this.$refs.vueFileAgent.upload('http://127.0.0.1:8000/api/uploadImage', { 'X-Requested-With': 'XMLHttpRequest' }, this.fileRecordsForUpload);
+     const img = await this.$refs.vueFileAgent.upload('http://www.be.evsu-organization-system.com/api/uploadImage', { 'X-Requested-With': 'XMLHttpRequest' }, this.fileRecordsForUpload);
      this.data.image = img[0].data;
     }
 
